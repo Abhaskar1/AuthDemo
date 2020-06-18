@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login System</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/yeti/bootstrap.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+      <a class="navbar-brand" href="/">Home</a>
+      <ul class="nav justify-content-end">
+        <% if(!currentUser){ %>
+        <li class="nav-item">
+          <a style="color: white;" class="nav-link" href="./register">SignUp</a>
+        </li>
+
+        <li class="nav-item">
+          <a style="color: white;" href="./login" class="nav-link" href=""
+            >LogIn</a
+          >
+          <% } else{ %>
+        </li>
+        <li class="nav-item">
+          <a style="color: white;" href="./logout" class="nav-link" href=""
+            >Log Out</a
+          >
+        </li>
+        <% }%>
+      </ul>
+    </nav>
+  </body>
+</html>
