@@ -1,5 +1,5 @@
 <%- include("./partials/header")%>
-
+<link rel="stylesheet" href="./stylesheets/style.css">
 <div class="container">
   <div class="container">
     <div class="row">
@@ -7,6 +7,41 @@
         <h1>Dashboard</h1>
       </div>
     </div>
+
+    <form method="POST" action="/add">
+      <div class="form-group">
+        <input type="text" placeholder="Title" name="title" class="form-control" required>
+      </div>
+      <div class="from-group">
+        <input type="text" placeholder="Description" name="description" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <br>
+        <input type="submit" value="Create Task" class="btn btn-primary">
+      </div>
+    </form>
+
+
+
+    <br>
+    <div class="container">
+      <h1>TASKS</h1>
+      <% tasks.forEach(function(task){ %>
+      <% if(task.author.id.equals(currentUser._id)){ %>
+      <div>
+        <h4><%=task.title%></h4>
+        <p><%=task.description.substring(0,10)%>...</p>
+        <div style="display: flex; align-items: flex-end; justify-content: end;">
+          <a style="align-items: flex-end;" href="/show/<%=task._id%>" class="btn btn-primary">Show More</a>
+          <form method="POST" action="/delete/<%=task._id%>?_method=DELETE">
+            <button class="btn btn-danger">Remove</button>
+          </form>
+        </div>
+      </div>
+      <%}})%>
+    </div>
   </div>
 </div>
+<script>
+</script>
 <%- include("./partials/footer")%>

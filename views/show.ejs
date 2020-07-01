@@ -1,0 +1,10 @@
+<%- include("./partials/header")%>
+
+<div class="container" style="padding: 1em;">
+    <div class="container text-center" style="padding:1em;">
+        <h1><%=task.title%></h1>
+        <p><%=task.description%></p>
+        <a href="/edit/<%=task._id%>" class="btn btn-info">Edit</a>
+    </div>
+</div>
+<%- include("./partials/footer")%>
